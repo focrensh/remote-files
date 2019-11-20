@@ -1,0 +1,62 @@
+{
+    "class": "AS3",
+    "action": "deploy",
+    "persist": true,
+    "declaration": {
+        "class": "ADC",
+        "schemaVersion": "3.12.0",
+        "id": "testid",
+        "label": "HTTP Config",
+        "remark": "Demo App",
+        "demo_aws": {
+            "class": "Tenant",
+            "App1": {
+                "class": "Application",
+                "template": "https",
+                "serviceMain": {
+                    "class": "Service_HTTPS",
+                    "virtualAddresses": [
+                        "10.1.3.53"
+                    ],
+                    "pool": "web_pool",
+                    "serverTLS": "webtls"
+                },
+                "web_pool": {
+                    "class": "Pool",
+                    "monitors": [
+                        "http"
+                    ],
+                    "members": [
+                        {
+                            "servicePort": 80,
+                            "serverAddresses": [
+                                "10.1.3.121"
+                            ]
+                        }
+                    ]
+                },
+                "webtls": {
+                    "class": "TLS_Server",
+                    "certificates": [
+                        {
+                            "certificate": "webcert"
+                        }
+                    ]
+                },
+                "webcert": {
+                    "class": "Certificate",
+                    "remark": "in practice we recommend using a passphrase",
+                    "certificate": {
+                        "bigip": "/Common/le_wildcard"
+                    },
+                    "privateKey": {
+                        "bigip": "/Common/le_wildcard"
+                    },
+                    "chainCA": {
+                        "bigip": "/Common/lechain"
+                    }
+                }
+            }
+        }
+    }
+}

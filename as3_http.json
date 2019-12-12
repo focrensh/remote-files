@@ -18,11 +18,7 @@
  					"virtualAddresses": [
  						"10.0.1.10"
  					],
- 					"pool": "web_pool",
-
- 					"snat": {
- 						"bigip": "/Common/sp1"
- 					}
+ 					"pool": "web_pool"
  				},
  				"web_pool": {
  					"class": "Pool",

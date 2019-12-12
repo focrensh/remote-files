@@ -22,7 +22,7 @@
         "myProvisioning": {
             "class": "Provision",
             "ltm": "nominal",
-            "asm": "nominal"
+            "assm": "nominal"
         },
         "dbvars": {
             "class": "DbVariables",

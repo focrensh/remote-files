@@ -2,7 +2,7 @@
     "class": "Telemetry",
     "controls": {
       "class": "Controls",
-      "logLevel": "debug"
+      "logLevelss": "debug"
     },
     "My_Poller": {
       "class": "Telemetry_System_Poller",

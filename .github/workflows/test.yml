@@ -11,4 +11,4 @@ jobs:
         id: hello
         uses: focrensh/as3_schema_validator@master
         with:
-          declaration: 'as3.json'
+          declaration: 'as3_http.json'

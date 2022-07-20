@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "UP"
+echo "UP2"
